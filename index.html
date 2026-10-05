@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Malaysia - Tour Booking</title>
+
+    <!-- jQuery Mobile -->
+    <link rel="stylesheet"
+        href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .ui-content {
+            padding: 20px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #eaf4f4;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        /* =========================
+           TOUR PACKAGE
+        ========================= */
+
+        .package {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .package img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .package h3 {
+            margin-top: 10px;
+        }
+
+        /* =========================
+           POPUP
+        ========================= */
+
+        .popupInfo {
+            padding: 20px;
+            max-width: 350px;
+        }
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-section {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        /* =========================
+           ERROR
+        ========================= */
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           SUCCESS
+        ========================= */
+
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
+<div data-role="page" id="home">
+
+    <div data-role="header">
+        <h1>Explore Malaysia</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="#home" class="ui-btn-active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#packages">
+                        Tours
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#booking">
+                        Booking
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div role="main" class="ui-content">
+
+        <div class="hero">
+
+            <h1>Explore Malaysia</h1>
+
+            <h2>Discover Amazing Places</h2>
+
+            <p>
+                Explore beautiful destinations in Malaysia
+                with our exciting tour packages.
+            </p>
+
+            <a href="#packages"
+               class="ui-btn ui-btn-b ui-corner-all">
+
+                View Tour Packages
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div data-role="footer">
+        <footer>
+            <p>
+                &copy; 2026 Explore Malaysia
+            </p>
+        </footer>
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOUR PACKAGES PAGE
+===================================================== -->
+
+<div data-role="page" id="packages">
+
+    <div data-role="header">
+
+        <h1>Tour Packages</h1>
+
+        <a href="#home"
+           class="ui-btn ui-icon-home ui-btn-icon-left">
+            Home
+        </a>
+
+    </div>
+
+
+    <div role="main" class="ui-content">
+
+
+        <!-- BALI -->
+
+        <div class="package">
+
+            <img src="bali.jpg"
+                 alt="Bali Adventure">
+
+            <h3>Bali Adventure</h3>
+
+            <p>
+                Enjoy an exciting holiday experience
+                with beautiful beaches and amazing scenery.
+            </p>
+
+            <p>
+                <strong>Price:</strong> RM 1,500
+            </p>
+
+            <a href="#booking"
+               onclick="selectTour('Bali Adventure')"
+               class="ui-btn ui-btn-b">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+
+        <!-- SABAH -->
+
+        <div class="package">
+
+            <img src="sabah.jpg"
+                 alt="Sabah Island Escape">
+
+            <h3>Sabah Island Escape</h3>
+
+            <p>
+                Discover the beautiful islands,
+                beaches and natural attractions of Sabah.
+            </p>
+
+            <p>
+                <strong>Price:</strong> RM 1,200
+            </p>
+
+            <a href="#booking"
+               onclick="selectTour('Sabah Island Escape')"
+               class="ui-btn ui-btn-b">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+
+        <!-- SARAWAK -->
+
+        <div class="package">
+
+            <img src="sarawak.jpg"
+                 alt="Sarawak Rainforest Journey">
+
+            <h3>Sarawak Rainforest Journey</h3>
+
+            <p>
+                Explore the rainforest and discover
+                the natural beauty of Sarawak.
+            </p>
+
+            <p>
+                <strong>Price:</strong> RM 1,300
+            </p>
+
+            <a href="#booking"
+               onclick="selectTour('Sarawak Rainforest Journey')"
+               class="ui-btn ui-btn-b">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div data-role="footer">
+
+        <footer>
+            <p>
+                &copy; 2026 Explore Malaysia
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOKING PAGE
+===================================================== -->
+
+<div data-role="page" id="booking">
+
+    <div data-role="header">
+
+        <h1>Tour Booking</h1>
+
+        <a href="#home"
+           class="ui-btn ui-icon-home ui-btn-icon-left">
+
+            Home
+
+        </a>
+
+    </div>
+
+
+    <div role="main" class="ui-content">
+
+        <h2>Book Your Tour</h2>
+
+
+        <form id="bookingForm"
+              onsubmit="return false;">
+
+
+            <!-- NAME -->
+
+            <label for="bookingName">
+                Full Name
+            </label>
+
+            <input type="text"
+                   id="bookingName"
+                   placeholder="Enter your name">
+
+
+            <!-- EMAIL -->
+
+            <label for="bookingEmail">
+                Email
+            </label>
+
+            <input type="email"
+                   id="bookingEmail"
+                   placeholder="Enter your email">
+
+
+            <!-- TOUR -->
+
+            <label for="tour">
+                Select Tour
+            </label>
+
+            <select id="tour">
+
+                <option value="">
+                    -- Select Tour --
+                </option>
+
+                <option value="Bali Adventure">
+                    Bali Adventure
+                </option>
+
+                <option value="Sabah Island Escape">
+                    Sabah Island Escape
+                </option>
+
+                <option value="Sarawak Rainforest Journey">
+                    Sarawak Rainforest Journey
+                </option>
+
+            </select>
+
+
+            <!-- PEOPLE -->
+
+            <label for="people">
+                Number of People
+            </label>
+
+            <input type="number"
+                   id="people"
+                   min="1"
+                   placeholder="Enter number of people">
+
+
+            <!-- SUBMIT -->
+
+            <button type="button"
+                    onclick="submitBooking()"
+                    class="ui-btn ui-btn-b">
+
+                Submit Booking
+
+            </button>
+
+
+        </form>
+
+
+        <!-- BOOKING MESSAGE -->
+
+        <div id="bookingMessage"></div>
+
+    </div>
+
+
+    <div data-role="footer">
+
+        <footer>
+            <p>
+                &copy; 2026 Explore Malaysia
+            </p>
+        </footer>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONTACT PAGE
+===================================================== -->
+
+<div data-role="page" id="contact">
+
+    <div data-role="header">
+
+        <h1>Contact Us</h1>
+
+        <a href="#home"
+           class="ui-btn ui-icon-home ui-btn-icon-left">
+
+            Home
+
+        </a>
+
+    </div>
+
+
+    <div role="main" class="ui-content">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Have any questions?
+            Send us a message.
+        </p>
+
+
+        <form id="contactForm"
+              onsubmit="return false;">
+
+
+            <!-- NAME -->
+
+            <label for="name">
+                Name
+            </label>
+
+            <input type="text"
+                   id="name"
+                   placeholder="Enter your name">
+
+            <div id="nameError"
+                 class="error">
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Email
+            </label>
+
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email">
+
+            <div id="emailError"
+                 class="error">
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea id="message"
+                      placeholder="Enter your message">
+            </textarea>
+
+            <div id="messageError"
+                 class="error">
+            </div>
+
+
+            <!-- CONSENT -->
+
+            <label>
+                <input type="checkbox"
+                       id="consent">
+
+                I agree to submit this message.
+            </label>
+
+            <div id="consentError"
+                 class="error">
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button type="button"
+                    onclick="submitContact()"
+                    class="ui-btn ui-btn-b">
+
+                Send Message
+
+            </button>
+
+
+        </form>
+
+
+        <!-- SUCCESS -->
+
+        <div id="successMessage"
+             class="success">
+        </div>
+
+    </div>
+
+
+    <div data-role="footer">
+
+        <footer>
+
+            <p>
+                Email:
+                exploremalaysia@example.com
+            </p>
+
+            <p>
+                Phone:
+                +60 12-345 6789
+            </p>
+
+            <p>
+                &copy; 2026 Explore Malaysia
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+// =====================================================
+// SELECT TOUR
+// =====================================================
+
+function selectTour(tourName) {
+
+    const tourSelect =
+        document.getElementById("tour");
+
+
+    if (tourSelect) {
+
+        tourSelect.value = tourName;
+
+
+        // Refresh jQuery Mobile select menu
+
+        if (
+            typeof $ !== "undefined" &&
+            $("#tour").hasClass("ui-select")
+        ) {
+
+            $("#tour").selectmenu("refresh");
+
+        }
+
+    }
+
+
+    // Go to booking page
+
+    window.location.hash = "booking";
+
+}
+
+
+
+// =====================================================
+// BOOKING FORM
+// =====================================================
+
+function submitBooking() {
+
+    const name =
+        document.getElementById("bookingName").value.trim();
+
+    const email =
+        document.getElementById("bookingEmail").value.trim();
+
+    const tour =
+        document.getElementById("tour").value;
+
+    const people =
+        document.getElementById("people").value.trim();
+
+    const bookingMessage =
+        document.getElementById("bookingMessage");
+
+
+    // Clear previous message
+    bookingMessage.innerHTML = "";
+
+
+    // =========================
+    // NAME VALIDATION
+    // =========================
+
+    if (name === "") {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>Please enter your name.</p>";
+
+        return;
+    }
+
+
+    // String validation
+    const namePattern = /^[A-Za-z ]+$/;
+
+    if (!namePattern.test(name)) {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>" +
+            "Name must contain letters and spaces only." +
+            "</p>";
+
+        return;
+    }
+
+
+    // =========================
+    // EMAIL VALIDATION
+    // =========================
+
+    if (email === "") {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>Please enter your email.</p>";
+
+        return;
+    }
+
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!emailPattern.test(email)) {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>" +
+            "Please enter a valid email address." +
+            "</p>";
+
+        return;
+    }
+
+
+    // =========================
+    // TOUR VALIDATION
+    // =========================
+
+    if (tour === "") {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>Please select a tour.</p>";
+
+        return;
+    }
+
+
+    // =========================
+    // NUMBER OF PEOPLE
+    // =========================
+
+    if (people === "") {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>" +
+            "Please enter the number of people." +
+            "</p>";
+
+        return;
+    }
+
+
+    const numberOfPeople = Number(people);
+
+
+    if (
+        !Number.isInteger(numberOfPeople) ||
+        numberOfPeople <= 0
+    ) {
+
+        bookingMessage.innerHTML =
+            "<p class='error'>" +
+            "Number of people must be greater than 0." +
+            "</p>";
+
+        return;
+    }
+
+
+    // =========================
+    // SUCCESS
+    // =========================
+
+    bookingMessage.innerHTML =
+
+        "<p class='success'>" +
+        "Booking submitted successfully!" +
+        "</p>" +
+
+        "<p>" +
+        "<strong>Name:</strong> " +
+        escapeHtml(name) +
+        "<br>" +
+
+        "<strong>Email:</strong> " +
+        escapeHtml(email) +
+        "<br>" +
+
+        "<strong>Tour:</strong> " +
+        escapeHtml(tour) +
+        "<br>" +
+
+        "<strong>Number of People:</strong> " +
+        numberOfPeople +
+        "</p>";
+}
+
+
+
+// =====================================================
+// CONTACT FORM
+// =====================================================
+
+function submitContact() {
+
+
+    const name =
+        document.getElementById("name")
+        .value
+        .trim();
+
+
+    const email =
+        document.getElementById("email")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById("message")
+        .value
+        .trim();
+
+
+    const consent =
+        document.getElementById("consent")
+        .checked;
+
+
+
+    // Clear previous errors
+
+    document.getElementById("nameError")
+        .innerHTML = "";
+
+    document.getElementById("emailError")
+        .innerHTML = "";
+
+    document.getElementById("messageError")
+        .innerHTML = "";
+
+    document.getElementById("consentError")
+        .innerHTML = "";
+
+    document.getElementById("successMessage")
+        .innerHTML = "";
+
+
+
+    // Check name
+
+    if (name === "") {
+
+        document.getElementById("nameError")
+            .innerHTML =
+            "Please enter your name.";
+
+        return;
+
+    }
+
+
+
+    if (name.length < 3) {
+
+        document.getElementById("nameError")
+            .innerHTML =
+            "Name must contain at least 3 characters.";
+
+        return;
+
+    }
+
+
+
+    // Check email
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+    if (email === "") {
+
+        document.getElementById("emailError")
+            .innerHTML =
+            "Please enter your email.";
+
+        return;
+
+    }
+
+
+
+    if (!emailPattern.test(email)) {
+
+        document.getElementById("emailError")
+            .innerHTML =
+            "Please enter a valid email address.";
+
+        return;
+
+    }
+
+
+
+    // Check message
+
+    if (message === "") {
+
+        document.getElementById("messageError")
+            .innerHTML =
+            "Please enter your message.";
+
+        return;
+
+    }
+
+
+
+    if (message.length < 10) {
+
+        document.getElementById("messageError")
+            .innerHTML =
+            "Message must contain at least 10 characters.";
+
+        return;
+
+    }
+
+
+
+    // Check consent
+
+    if (!consent) {
+
+        document.getElementById("consentError")
+            .innerHTML =
+            "You must provide consent before submitting the form.";
+
+        return;
+
+    }
+
+
+
+    // Display success message
+
+    document.getElementById("successMessage")
+        .innerHTML =
+        "Thank you! Your message has been submitted successfully.";
+
+
+
+    // Clear form
+
+    document.getElementById("contactForm")
+        .reset();
+
+}
+
+
+
+// =====================================================
+// SECURITY HELPER
+// =====================================================
+
+function escapeHtml(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = value;
+
+    return div.innerHTML;
+
+}
+
+</script>
+
+
+</body>
+</html>
